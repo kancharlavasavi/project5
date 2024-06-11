@@ -1,0 +1,40 @@
+<html>
+ <head>
+  <title>Registration Form</title> 
+  <script>
+    // User Validations
+function loginValidation() {
+        // Ramesh
+var uname = document.myform.uname.value;
+         //Ramesh@123
+var password = document.myform.password.value;
+        if(uname==null || uname=="") {
+          alert("Name cant be blank")
+          return false;  
+       } else if (password.length<6){
+          alert("Password Must be 6 letters")
+          return false;
+       }  
+       return true                 
+    }           
+ </script>
+  <style>
+    body {
+           background-image: url("lo.jpg");
+           background-image: no-repeat;
+           background-size: 1600px 800px; 
+         }
+     h1 {
+       color:mediumseagreen
+       }
+  </style>
+ </head>
+ <body>
+    <center><hr><h1>login page</h1><hr><br><br><br>
+      <form name="myform" action="food.html" 	onsubmit="return loginValidation(this)">
+    User Name:<input type="text" name="uname" autofocus placeholder=" user name"><br><br>
+    Password:<input type="password" name="password" placeholder=" password"><br><br>
+    <input type="submit"></center>
+  </form>
+ </body>
+</html>

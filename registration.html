@@ -1,0 +1,67 @@
+<html>
+  
+ <head>
+  <title>Registration Form</title> 
+  <style>
+     body {
+           background-image: url("pl.jpg");
+           background-image: no-repeat;
+           background-size: 1600px 800px; 
+         }
+      h1 {
+        color:mediumseagreen
+        }
+  </style>
+  <script>  
+    function validateemail()  
+    {  
+    var myemail=document.myform.email.value;  
+    var fname=document.myform.fname.value;  
+    var mname=document.myform.mname.value;  
+    var lname=document.myform.lname.value;  
+    var atposition=myemail.indexOf("@");  
+    var dotposition=myemail.lastIndexOf(".");  
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=myemail.length){  
+      alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+      return false;  
+      }  
+    if(fname==null || mname=="" || lname==null) {
+        alert("Name cant be blank")
+          return false;  
+       } else if (password.length<6){
+          alert("Password Must be 6 letters")
+          return false;
+       }  
+       return true            
+      }
+    </script>  
+ </head>
+ <body>
+  <form name="myform"  method="post" action="Login2.html" onsubmit="return validateemail();">  
+    <h1><center><hr>REGISTRATION</center><hr></h1><br>
+   <center>First Name <span style="color: red;"> *</span> : <input type="text" name="fname" autofocus placeholder=" first name"><br><br>
+    Middle Name <span style="color: red;"> *</span> : <input type="text" name="mname" placeholder=" middle name" ><br><br>
+    Last Name <span style="color: red;"> *</span> : <input type="text" name="lname" placeholder=" last name"><br><br>
+    Password <span style="color: red;"> *</span> : <input type="password" name="password1" placeholder=" password"><br><br>
+   Confirm Password <span style="color: red;"> *</span> : <input type="password" name="password2" placeholder=" confirm password"><br><br>
+   Email id <span style="color: red;"> *</span> : <input type="text" list="email" name="email" placeholder=" email">
+<datalist id="email">
+<option value="ram@gamil.com"></option>
+             <option value="ramkumar@yahoo.com"></option>
+             <option value="ramkumar@hotmail.com"></option>
+             <option value="ramkumar123@gmail.com"></option>
+                  
+        </datalist><br><br>
+   Contact Number <span style="color: red;"> *</span> : <input type="tel"  name="personal" id="per1" pattern="[0-9]{10}" title="the ten digits number" placeholder="contact number" >
+   <br><br>
+   Gender <input type="radio" name="m" value="M">Male
+          <input type="radio" name="f" value="F">female
+          <input type ="radio" name="o" value="O">other<br><br>
+   
+   Date of birth:<input type="date" name="d"><br><br>
+   Age:<input type="number" name="n" placeholder=" age"><br><br>
+   Address:<input type="text" name="a" placeholder=" address"><br><br>
+  <input type="submit"><br></center>
+  </form>
+</body>
+</html>
